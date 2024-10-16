@@ -31,7 +31,7 @@
   import { ref, onMounted, onUnmounted } from 'vue';
   
   // Define data about your friend
-  const friendName = 'John Doe';
+  const friendName = 'Rohan Chourasia';
   const friendHobby = 'Kaam Kaam Kaam';
   const bestMemory = 'GM';
   const favoritePerson = 'MOM';
