@@ -2,6 +2,9 @@
     <div>
         <LayoutShellHeader />
         <slot />
-        <LayoutShellFooter />
+        <div >
+
+            <LayoutShellFooter />
+        </div>
     </div>
 </template>

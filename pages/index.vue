@@ -1,6 +1,6 @@
 <template>
     <div>
        <LandingPageBanner /> 
-       neetu
+       <LandingImages />
     </div>
 </template>

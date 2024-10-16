@@ -1,10 +1,10 @@
 <template>
-    <div>
+    <div class="h-24">
          <!-- Canvas for Fireworks -->
       <canvas id="birthday"></canvas>
   
   <!-- Happy Birthday Heading -->
-  <h1 class="heading">Happy Birthday!</h1>
+  <h1 class="heading pt-32 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer">Happy Birthday!</h1>
     </div>
 </template>
 <script setup lang="ts">
