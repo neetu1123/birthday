@@ -1,6 +1,28 @@
 <template>
-    <div class="">
-      <h3 class="name pt-12">Happy Birthday</h3>
+    <div class="about-page">
+      <!-- Header section with greeting -->
+      <header class="header">
+        <h1 class="greeting">Happy Birthday, {{ friendName }}!</h1>
+        <h2 class="sub-heading">Here's to celebrating a wonderful friend!</h2>
+      </header>
+  
+      <!-- Main content about your friend -->
+      <section class="about-friend">
+        <p class="message">
+          Today, we celebrate an amazing person: {{ friendName }}! Your kindness, humor, and creativity make the world a brighter place. 
+          From all the adventures we’ve shared to the endless laughs, it’s a blessing to know you. 
+          I can’t wait to create more memories and celebrate many more birthdays together!
+        </p>
+        
+        <!-- Fun facts or memories -->
+        <ul class="memories">
+          <li><strong>Favorite hobby:</strong> {{ friendHobby }}</li>
+          <li><strong>Best memory together:</strong> {{ bestMemory }}</li>
+          <li><strong>Favorite movie:</strong> {{ favoritePerson }}</li>
+        </ul>
+      </section>
+  
+      <!-- Confetti canvas for a fun effect -->
       <canvas class="confetti" ref="canvasRef"></canvas>
     </div>
   </template>
@@ -8,11 +30,17 @@
   <script setup lang="ts">
   import { ref, onMounted, onUnmounted } from 'vue';
   
-  //-----------Var Inits--------------
+  // Define data about your friend
+  const friendName = 'John Doe';
+  const friendHobby = 'Kaam Kaam Kaam';
+  const bestMemory = 'GM';
+  const favoritePerson = 'MOM';
+  
+  // Confetti canvas setup
   const canvasRef = ref<HTMLCanvasElement | null>(null);
   let ctx: CanvasRenderingContext2D | null = null;
   let confetti: any[] = [];
-  const confettiCount = 300;
+  const confettiCount = 200;
   const gravity = 0.5;
   const terminalVelocity = 5;
   const drag = 0.075;
@@ -135,33 +163,56 @@
   </script>
   
   <style scoped>
-  .confetti {
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-    user-select: none;
-  }
-  
-  body {
-    cursor: pointer;
-  }
-  
-  .name {
-    font-weight: 900;
-    text-transform: uppercase;
-    padding: 36px;
-    position: absolute;
-    left: 0;
-    right: 0;
+  .about-page {
     text-align: center;
-    top: 37%;
-    color: rebeccapurple;
-    font-family: 'Righteous', cursive;
-    font-size: 93px;
-    letter-spacing: 10px;
-    text-shadow: 2px 4px 11px rgb(0 0 0 / 28%);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .header {
+    margin-bottom: 20px;
+  }
+  
+  .greeting {
+    font-size: 3rem;
+    color: #ff6600;
+  }
+  
+  .sub-heading {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .about-friend {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+  }
+  
+  .message {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .memories {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .memories li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+  }
+  
+  .confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
   }
   </style>
   
