@@ -18,7 +18,7 @@
         <ul class="memories">
           <li><strong>Favorite hobby:</strong> {{ friendHobby }}</li>
           <li><strong>Best memory together:</strong> {{ bestMemory }}</li>
-          <li><strong>Favorite movie:</strong> {{ favoritePerson }}</li>
+          <li><strong>Favorite Person:</strong> {{ favoritePerson }}</li>
         </ul>
       </section>
   
@@ -31,10 +31,10 @@
   import { ref, onMounted, onUnmounted } from 'vue';
   
   // Define data about your friend
-  const friendName = 'Rohan Chourasia';
-  const friendHobby = 'Kaam Kaam Kaam';
-  const bestMemory = 'GM';
-  const favoritePerson = 'MOM';
+  const friendName = 'Kajal';
+  const friendHobby = 'Ghumna';
+  const bestMemory = 'Pta Nahi';
+  const favoritePerson = 'Mishra Ji';
   
   // Confetti canvas setup
   const canvasRef = ref<HTMLCanvasElement | null>(null);
